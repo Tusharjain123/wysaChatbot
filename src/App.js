@@ -6,9 +6,19 @@ import './App.css';
 function App() {
   console.log(localStorage.getItem("chat"))
   const [chat,setChat] = useState(localStorage.getItem("chat")? localStorage.getItem("chat"): false)
-  localStorage.setItem("colorChoice", {})
+  const userColor = JSON.parse(localStorage.getItem("colorChoice"))
+  const color = {
+    bodyColor: userColor ? userColor.bodyColor : "no-repeat linear-gradient(239.26deg, #DDEEED 63.17%, #FDF1E0 94.92%)",
+    eleColour: userColor ? userColor.eleColour : "#fff"
+  }
+  localStorage.setItem("colorChoice", JSON.stringify(color))
 
-  
+  if (userColor){
+    document.body.style.background = color.bodyColor
+    document.querySelectorAll(".content").forEach(element => {
+       element.style.background = color.eleColour;
+    });
+  }
   const handleClick = (e) => {
     e.preventDefault()
     setChat(localStorage.getItem("chat"))

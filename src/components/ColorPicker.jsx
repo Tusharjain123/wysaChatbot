@@ -4,17 +4,21 @@ import "../styles/colorPicker.css"
 const colorPick = (bodyColor, elementColor) => {
   document.body.style.background = bodyColor
   document.querySelectorAll(".content").forEach(element => {
-    element.style.backgroundColor = elementColor;
+    return element.style.background = elementColor;
   });
+  const color = {
+    bodyColor: bodyColor,
+    eleColour: elementColor
+  }
+  localStorage.setItem("colorChoice", JSON.stringify(color))
 }
-
 export const ColorPicker = () => {
   const colorChanger = (e) => {
     if (e.target.getAttribute("name") === "first") {
-      colorPick("no-repeat linear-gradient(239.26deg, #DDEEED 63.17%, #FDF1E0 94.92%)","#fff")
+      colorPick("no-repeat linear-gradient(239.26deg, #DDEEED 63.17%, #FDF1E0 94.92%)","linear-gradient(0deg, #fff)")
     }
     else if (e.target.getAttribute("name") === "second") {
-      colorPick("no-repeat linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%)","#fff2d2" )
+      colorPick("no-repeat linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%)","linear-gradient(0deg, #fff2d2)" )
     }
     else if (e.target.getAttribute("name") === "third") {
       colorPick("no-repeat linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%)", "rgb(201 255 204)" )
@@ -28,10 +32,7 @@ export const ColorPicker = () => {
     e.preventDefault()
     const colorValue = document.querySelector("#color").value
     const bubbleValue = document.querySelector("#bubbleColor").value
-    document.body.style.background = colorValue
-    document.querySelectorAll(".content").forEach(element => {
-      element.style.backgroundColor = bubbleValue;
-    });
+    colorPick(colorValue, bubbleValue)
   }
   return (
     <div>
