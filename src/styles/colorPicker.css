@@ -1,0 +1,73 @@
+.colorPicker{
+    top: 20px;
+    width: 116px;
+    height: 76px;
+    position: absolute;
+    right: 20px;
+    border-radius: 20px;
+    border: 1px solid rgb(255, 255, 255);
+    overflow: hidden;
+    text-align: center;
+    background-color: snow;
+    font-weight: 300;
+    transition: 2s;
+}
+
+.colorPicker:hover{
+    height: fit-content;
+}
+.zero{ 
+    height: 45px;
+    margin: 15px;
+    padding: 14px 7px;
+}
+.first{
+    background:no-repeat linear-gradient(180deg, #DDEEED 63.17%, #FDF1E0 94.92%);
+    background-attachment: fixed; 
+    height: 45px;
+    margin: 6px;
+    padding: 14px 20px;
+}
+.second{
+    background: linear-gradient(326deg, rgb(34, 199, 202) 41%, rgba(253,187,45,1) 49%);
+    background-attachment: fixed; 
+    height: 45px;
+    margin: 6px;
+    padding: 14px 20px;
+}
+.third{
+    background-color: #FBAB7E;
+    background-image: linear-gradient(331deg, #FBAB7E 0%, #F7CE68 16%, #ffffff 100%);    
+    background-attachment: fixed; 
+    height: 45px;
+    margin: 6px;
+    padding: 14px 20px;
+}
+.fourth{
+    background-color: #D9AFD9;
+    background-image: linear-gradient(67deg, #D9AFD9 0%, #97D9E1 50%, #f5d1d1 100%);
+    background-attachment: fixed; 
+    height: 45px;
+    margin: 6px;
+    padding: 14px 20px;
+}
+.fifth{
+    height: fit-content;
+    margin: 6px;
+    padding: 14px 20px;
+    background-color: rgb(221, 250, 240);
+}
+
+.fifth input{
+    margin-bottom: 5px;
+    margin-right: 2px;
+}
+.btn{
+    display: block;
+    margin: auto;
+}
+.hidden{
+    display: none;
+}
+
+
