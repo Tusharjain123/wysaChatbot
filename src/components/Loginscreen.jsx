@@ -3,6 +3,7 @@ import "../styles/login.css"
 import { useNavigate } from 'react-router-dom'
 
 export const Loginscreen = () => {
+
     const navigate = useNavigate()
     if (localStorage.getItem("login")) navigate("/logout")
     const [info, setInfo] = useState({
@@ -15,12 +16,19 @@ export const Loginscreen = () => {
     }
     const handleSubmit = (e) => {
         e.preventDefault()
-        const userInfo = {
-            email : info.email,
-            password: info.password
-        }
-        localStorage.setItem("login", JSON.stringify(userInfo))
-        navigate("/chat?delay=1000")
+       const emailCheck = /\S+@\S+\.\S+/.test(info.email);
+       if (!emailCheck){
+        alert("Enter valid Email")
+       }
+       else{
+           const userInfo = {
+               email : info.email,
+               password: info.password
+           }
+           localStorage.setItem("login", JSON.stringify(userInfo))
+           navigate("/chat?delay=1000")
+       }
+          
     }
     return (
         <div className="login">

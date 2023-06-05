@@ -53,3 +53,8 @@
     position: relative;
     top: -6px;
 }
+
+.profbutton{
+    padding-top: 19px;
+    margin-bottom: 5px;
+}

@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="App">
     <Routes>
-    <Route path="/" element = {login ? <><Logout/><Bubble/></>: <><Loginscreen/><Bubble/></>}/>
+    <Route path="/" element = {login ? <><Logout/></>: <><Loginscreen/><Bubble/></>}/>
     <Route path="/chat" element = {<ChatScreen/>}/>
     <Route path="/logout" element = {<Logout/>}/>
 
