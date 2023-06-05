@@ -1,39 +1,36 @@
-import { useState } from 'react';
+
 import { ChatScreen } from './components/ChatScreen';
 import { Loginscreen } from './components/Loginscreen';
 import './App.css';
+import {Routes, Route} from 'react-router-dom';
+import { Bubble } from './components/Bubble';
+import { Logout } from './components/Logout';
+
 
 function App() {
-  console.log(localStorage.getItem("chat"))
-  const [chat,setChat] = useState(localStorage.getItem("chat")? localStorage.getItem("chat"): false)
   const userColor = JSON.parse(localStorage.getItem("colorChoice"))
   const color = {
     bodyColor: userColor ? userColor.bodyColor : "no-repeat linear-gradient(239.26deg, #DDEEED 63.17%, #FDF1E0 94.92%)",
     eleColour: userColor ? userColor.eleColour : "#fff"
   }
   localStorage.setItem("colorChoice", JSON.stringify(color))
-
-  if (userColor){
-    document.body.style.background = color.bodyColor
-    document.querySelectorAll(".content").forEach(element => {
-       element.style.background = color.eleColour;
-    });
+  window.onload = ()=>{
+    if (userColor){
+      document.body.style.background = color.bodyColor
+      document.querySelectorAll(".content").forEach(ele => {
+         ele.style.background = color.eleColour;
+      });
+    }
   }
-  const handleClick = (e) => {
-    e.preventDefault()
-    setChat(localStorage.getItem("chat"))
-    localStorage.setItem("chat", !chat)
-    setChat(!chat)
-    console.log(chat)
-  }
-  
+  const login = localStorage.getItem("login")
   return (
     <div className="App">
-     {!chat && <Loginscreen/>}
-     {chat && <ChatScreen/>}
-      <div className="bubble" onClick={handleClick}>
-        <img src="/images/chatbot.png" alt="chatbot" loading='lazy' width={100} height={100} />
-      </div>
+    <Routes>
+    <Route path="/" element = {login ? <><Logout/><Bubble/></>: <><Loginscreen/><Bubble/></>}/>
+    <Route path="/chat" element = {<ChatScreen/>}/>
+    <Route path="/logout" element = {<Logout/>}/>
+
+    </Routes>
     </div>
   );
 }

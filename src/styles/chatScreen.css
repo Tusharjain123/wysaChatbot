@@ -5,9 +5,9 @@
     min-width: 280px;
 }
 .messenger{
-    height: 43vw;
+    height: 39vw;
     overflow-y: auto;
-    min-height: 793px;
+    min-height: 770px;
 }
 .messenger::-webkit-scrollbar{
     width: 5px;
@@ -87,4 +87,10 @@
     right: -100%;
     left: 101%;
     top: 43px;
+}
+
+.back{
+    padding: 10px;
+    margin-top: 12px;
+    cursor:pointer;
 }

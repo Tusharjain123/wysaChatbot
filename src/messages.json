@@ -1,14 +1,18 @@
 [
     {
+        "id" : "1",
         "chatBot": " Hi there! 👋"
     },
     {
+        "id" : "2",
         "chatBot" : "I'm Wysa - an AI chatbot built by therapists."
     },
     {
+        "id" : "3",
         "chatBot" : "I'm here to understand your concern and connect you with the best resources available to support you."
     },
     {
+        "id" : "4",
         "chatBot" : "Can I help?"
     }
   ]

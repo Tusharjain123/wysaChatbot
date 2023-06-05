@@ -1,0 +1,54 @@
+.logout {
+    position: fixed;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 23%;
+    padding: 70px 30px 44px;
+    border-radius: 22px;
+    background: #161616;
+    text-align: center;
+}
+
+@media (width >=450px) {
+    .login {
+        width: 380px;
+    }
+}
+
+.btn {
+    width: 100%;
+    height: 60px;
+    outline: none;
+    padding: 0;
+    font-family: inherit;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #157ae1;
+    color: #f9f9f9;
+    border: 0;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.userLogin{
+    width: 100%;
+    height: 51px;
+    margin: auto;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    margin-bottom: 20px;
+    color: white;
+    border-radius: 10px;
+}
+
+.userLogin span{
+    padding: 5px;
+}
+
+.userEmail{
+    position: relative;
+    top: -6px;
+}
