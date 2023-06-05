@@ -21,7 +21,7 @@ export const Logout = () => {
           <span className="material-symbols-outlined"> account_circle </span>
           <span className='userEmail'>{login?.email}</span>
         </div>
-        <button className='btn' type="submit" onClick={handleClick}>Logout</button>
+        <button className='btn' type="submit" onClick={handleClick}>{login ?"Logout" : "Login"}</button>
       </div>
     </>
   )

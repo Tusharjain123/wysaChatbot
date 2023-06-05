@@ -9,6 +9,7 @@
     border-radius: 22px;
     background: #161616;
     text-align: center;
+    min-width: 350px;
 }
 
 @media (width >=450px) {
